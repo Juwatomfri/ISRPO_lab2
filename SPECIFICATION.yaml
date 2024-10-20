@@ -1,0 +1,399 @@
+openapi: 3.0.0
+info:
+  title: Library App API
+  description: API for managing books, users, and rental in a library system.
+  version: 1.0.0
+servers:
+  - url: https://api.library-app.com/v1
+    description: Production server
+paths:
+  /books:
+    get:
+      summary: Get a list of books
+      description: Returns a list of all available books in the library.
+      responses:
+        "200":
+          description: A list of books.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Book"
+    post:
+      summary: Add a new book
+      description: Creates a new book record in the library.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookInput"
+      responses:
+        "201":
+          description: Book created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+              examples:
+                "Books added to the library ":
+                  value: |-
+                    {
+                      "title": "Le Comte de Monte-Cristo",
+                      "author": "Alexandre Dumas",
+                      "isbn": "9785041159979",
+                      "publicationYear": 2020,
+                      "copiesAvailable": 5
+                    }
+  /books/{id}:
+    get:
+      summary: Get a book by ID
+      description: Returns details of a specific book by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Book details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+        "404":
+          description: Book not found
+    put:
+      summary: Update a book
+      description: Updates the details of an existing book.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BookInput"
+      responses:
+        "200":
+          description: Book updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Book"
+    delete:
+      summary: Delete a book
+      description: Deletes a book from the library by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Book deleted successfully.
+  /users:
+    get:
+      summary: Get a list of users
+      description: Returns a list of all registered users in the library system.
+      responses:
+        "200":
+          description: A list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+    post:
+      summary: Register a new user
+      description: Creates a new user in the library system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInput"
+      responses:
+        "201":
+          description: User registered successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+              examples:
+                Example response:
+                  value: |-
+                    {
+                      "name": "Виктор Афанасьевич Васильев",
+                      "phoneNumber": "+79213856473"
+                    }
+  /users/{id}:
+    get:
+      summary: Get a user by ID
+      description: Returns details of a specific user by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: User not found
+    put:
+      summary: Update a user
+      description: Updates the details of an existing user.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInput"
+      responses:
+        "200":
+          description: User updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    delete:
+      summary: Delete a user
+      description: Deletes a user from the library system by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: User deleted successfully.
+  /rental:
+    get:
+      summary: Get a list of rental
+      description: Returns a list of all current book rental.
+      responses:
+        "200":
+          description: A list of rental.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Loan"
+    post:
+      summary: Create a new loan
+      description: Issues a new book loan to a user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoanInput"
+      responses:
+        "201":
+          description: Loan created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Loan"
+              examples:
+                Example response:
+                  value: |-
+                    {
+                      "bookId": "0984",
+                      "dueDate": "20-04-2024",
+                      "id": "0465",
+                      "loanDate": "20-04-2024",
+                      "returnDate": "24-04-2024",
+                      "userId": "345"
+                    }
+  /rental/{id}:
+    get:
+      summary: Get a loan by ID
+      description: Returns details of a specific loan by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Loan details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Loan"
+        "404":
+          description: Loan not found
+    put:
+      summary: Update a loan
+      description: Updates the details of an existing loan (e.g., return date, status).
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoanInput"
+      responses:
+        "200":
+          description: Loan updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Loan"
+    delete:
+      summary: Delete a loan
+      description: Deletes a loan from the system.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Loan deleted successfully.
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the book
+        title:
+          type: string
+          description: Title of the book
+        author:
+          type: string
+          description: Author of the book
+        isbn:
+          type: string
+          description: ISBN number of the book
+        publicationYear:
+          type: integer
+          description: Year the book was published
+        copiesAvailable:
+          type: integer
+          description: Number of copies available for loan
+      required:
+        - id
+        - title
+        - author
+        - isbn
+        - copiesAvailable
+    BookInput:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of the book
+        author:
+          type: string
+          description: Author of the book
+        isbn:
+          type: string
+          description: ISBN number of the book
+        publicationYear:
+          type: integer
+          description: Year the book was published
+        copiesAvailable:
+          type: integer
+          description: Number of copies available for loan
+      required:
+        - title
+        - author
+        - isbn
+        - copiesAvailable
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the user
+        name:
+          type: string
+          description: Full name of the user
+        phoneNumber:
+          type: string
+          description: User's phoneNumber
+        membershipDate:
+          type: string
+          format: date
+          description: Date when the user registered
+      required:
+        - id
+        - name
+        - phoneNumber
+    UserInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Full name of the user
+        phoneNumber:
+          type: string
+          description: User's phoneNumber
+      required:
+        - name
+        - phoneNumber
+    Loan:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the loan
+        userId:
+          type: string
+          description: ID of the user who borrowed the book
+        bookId:
+          type: string
+          description: ID of the book being loaned
+        loanDate:
+          type: string
+          format: date
+          description: Date when the loan started
+        dueDate:
+          type: string
+          format: date
+          description: Date when the loan is due
+        returnDate:
+          type: string
+          format: date
+          description: Date when the book was returned (if applicable)
+      required:
+        - id
+        - userId
+        - bookId
+        - loanDate
+        - dueDate
+    LoanInput:
+      type: object
