@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 
 import connexion
-
-from swagger_server import encoder
-
-from prometheus_client import Counter, Histogram, generate_latest
 from flask import Flask, Response, request
+from prometheus_client import Counter, Histogram, generate_latest
 import time
+from swagger_server import encoder
 
 # Инициализация метрик
 REQUEST_COUNT = Counter('request_count', 'Количество запросов', ['method', 'endpoint'])
 REQUEST_LATENCY = Histogram('request_latency_seconds', 'Время обработки запроса', ['method', 'endpoint'])
 
-
+# Создаем приложение с использованием connexion
 app = connexion.App(__name__, specification_dir='./swagger/')
+
+# Инициализация Flask (будет доступен через app.app)
 flask_app = app.app
 
+# Определяем поведение перед и после запроса
 @flask_app.before_request
 def start_timer():
     request.start_time = time.time()
@@ -41,12 +42,15 @@ def metrics():
 def example():
     return {"message": "Hello, World!"}
 
-
 def main():
+    # Настройка Swagger через connexion
     app.app.json_encoder = encoder.JSONEncoder
     app.add_api('swagger.yaml', arguments={'title': 'Library App API'}, pythonic_params=True)
+
+    # Запуск сервера
     app.run(port=8080)
 
 
 if __name__ == '__main__':
+    print(flask_app.url_map)  # Проверка зарегистрированных маршрутов
     main()
