@@ -1,3 +1,7 @@
+Признаки жизни графаны расположены в папке grafana и в файле Grafana.pdf
+
+
+
 # Swagger generated server
 
 ## Overview

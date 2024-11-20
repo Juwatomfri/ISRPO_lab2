@@ -1,10 +1,44 @@
 #!/usr/bin/env python3
-
+import logging
+import requests
 import connexion
 from flask import Flask, Response, request
 from prometheus_client import Counter, Histogram, generate_latest
 import time
 from swagger_server import encoder
+
+# Конфигурация логирования для Loki
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.INFO)
+
+# Настройка логирования для отправки в Loki
+class LokiHandler(logging.Handler):
+    def __init__(self, url):
+        logging.Handler.__init__(self)
+        self.url = url
+
+    def emit(self, record):
+        log_entry = self.format(record)
+        payload = {
+            "streams": [
+                {
+                    "stream": {"job": "flask-app", "level": "info"},
+                    "values": [[str(int(time.time() * 1000000000)), log_entry]]
+                }
+            ]
+        }
+        headers = {"Content-Type": "application/json"}
+        response = requests.post(self.url, json=payload, headers=headers)
+        return response.status_code
+
+# Указываем URL Loki для отправки логов
+loki_url = "http://localhost:3100/loki/api/v1/push"
+
+# Добавляем кастомный хендлер для отправки логов в Loki
+loki_handler = LokiHandler(loki_url)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+loki_handler.setFormatter(formatter)
+log.addHandler(loki_handler)
 
 # Инициализация метрик
 REQUEST_COUNT = Counter('request_count', 'Количество запросов', ['method', 'endpoint'])
