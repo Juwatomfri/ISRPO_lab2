@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import logging
+from logging.handlers import HTTPHandler
 import requests
 import connexion
 from flask import Flask, Response, request
@@ -8,37 +9,40 @@ import time
 from swagger_server import encoder
 
 # Конфигурация логирования для Loki
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.INFO)
+# log = logging.getLogger('werkzeug')
+# log.setLevel(logging.INFO)
 
 # Настройка логирования для отправки в Loki
-class LokiHandler(logging.Handler):
+class LokiHandler(HTTPHandler):
     def __init__(self, url):
-        logging.Handler.__init__(self)
         self.url = url
+        super().__init__(host='', url=url, method='POST')
 
     def emit(self, record):
         log_entry = self.format(record)
         payload = {
             "streams": [
                 {
-                    "stream": {"job": "flask-app", "level": "info"},
+                    "stream": {"job": "flask-api", "level": record.levelname},
                     "values": [[str(int(time.time() * 1000000000)), log_entry]]
                 }
             ]
         }
-        headers = {"Content-Type": "application/json"}
-        response = requests.post(self.url, json=payload, headers=headers)
-        return response.status_code
+        try:
+            response = requests.post(self.url, json=payload)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            app.app.logger.error(f"Failed to send log entry to Loki: {e}")
 
 # Указываем URL Loki для отправки логов
-loki_url = "http://localhost:3100/loki/api/v1/push"
+loki_url = "http://loki:3100/loki/api/v1/push"
 
 # Добавляем кастомный хендлер для отправки логов в Loki
 loki_handler = LokiHandler(loki_url)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 loki_handler.setFormatter(formatter)
-log.addHandler(loki_handler)
+loki_handler.setLevel(logging.INFO)
+# log.addHandler(loki_handler)
 
 # Инициализация метрик
 REQUEST_COUNT = Counter('request_count', 'Количество запросов', ['method', 'endpoint'])
@@ -49,6 +53,7 @@ app = connexion.App(__name__, specification_dir='./swagger/')
 
 # Инициализация Flask (будет доступен через app.app)
 flask_app = app.app
+flask_app.logger.addHandler(loki_handler)
 
 # Определяем поведение перед и после запроса
 @flask_app.before_request
@@ -63,7 +68,7 @@ def record_metrics(response):
     
     # Увеличение счетчика запросов
     REQUEST_COUNT.labels(request.method, request.path).inc()
-    
+    flask_app.logger.info(f"Request {request.method} to {request.path} succeeded with status {response.status_code}")
     return response
 
 # Эндпоинт для метрик
