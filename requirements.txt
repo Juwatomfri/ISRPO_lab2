@@ -5,3 +5,7 @@ setuptools >= 21.0.0
 swagger-ui-bundle >= 0.0.2
 prometheus_client
 requests
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-instrumentation-flask

@@ -7,6 +7,12 @@ from flask import Flask, Response, request
 from prometheus_client import Counter, Histogram, generate_latest
 import time
 from swagger_server import encoder
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
+import random, time
 
 # Конфигурация логирования для Loki
 # log = logging.getLogger('werkzeug')
@@ -77,9 +83,44 @@ def metrics():
     return Response(generate_latest(), mimetype="text/plain")
 
 # Пример маршрута для демонстрации
-@flask_app.route('/api/example')
+@flask_app.route('/v1/ui/metrics')
 def example():
     return {"message": "Hello, World!"}
+
+# Настройка OpenTelemetry
+trace.set_tracer_provider(TracerProvider())
+tracer = trace.get_tracer_provider().get_tracer(__name__)
+
+
+# Экспорт трейсов в Tempo через OTLP
+otlp_exporter = OTLPSpanExporter(
+    endpoint="http://tempo:4317",  # Порт и адрес контейнера Tempo
+    insecure=True
+)
+span_processor = BatchSpanProcessor(otlp_exporter)
+trace.get_tracer_provider().add_span_processor(span_processor)
+
+# Инструментируем Flask
+FlaskInstrumentor().instrument_app(flask_app)
+
+@app.route("/trace-example")
+def trace_example():
+    with tracer.start_as_current_span("example-span"):
+        time.sleep(random.uniform(0.1, 0.5))
+        return "Trace example!"
+    
+@app.route("/error")
+def error_route():
+    with tracer.start_as_current_span("example-span", attributes={"service.name": "flask-api"}) as span:
+        try:
+            # Генерация случайной ошибки
+            if random.random() > 0.5:
+                raise ValueError("Random error occurred")
+        except Exception as e:
+            span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
+            span.record_exception(e)
+            return "Error occurred!", 500
+    return "No error!", 200
 
 def main():
     # Настройка Swagger через connexion
