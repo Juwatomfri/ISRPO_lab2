@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Juwatomfri/ISRPO_lab2",
+  "pipelineDirectory": "ISRPO_lab2",
+  "workspaceDirectory": "ISRPO_lab2\\ISRPO_lab2",
+  "repositories": {
+    "Juwatomfri/ISRPO_lab2": {
+      "repositoryPath": "ISRPO_lab2\\ISRPO_lab2",
+      "lastRunOn": "12/25/2024 23:41:44 +03:00"
+    }
+  },
+  "lastRunOn": "12/25/2024 23:41:44 +03:00"
+}
