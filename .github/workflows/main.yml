@@ -3,10 +3,10 @@ name: CI/CD for Flask Server on Local Docker
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 #очень важный комментарий
 jobs:
   build-and-redeploy:
