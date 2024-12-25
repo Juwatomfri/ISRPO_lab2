@@ -1,7 +1,7 @@
 {
-  "after": "dd5fdd8e198def344c12c86a461948dc255e8b4e",
+  "after": "dec08b5ff0aa383e0e4ed53edbd916c62db046e1",
   "base_ref": null,
-  "before": "f6be24fd56649f61c1ccc0f1c779a35b2e1428da",
+  "before": "093c628d08cbd597946a9db64a181878493b4dd2",
   "commits": [
     {
       "author": {
@@ -15,14 +15,14 @@
         "username": "Juwatomfri"
       },
       "distinct": true,
-      "id": "dd5fdd8e198def344c12c86a461948dc255e8b4e",
-      "message": "Update code2",
-      "timestamp": "2024-12-25T23:50:12+03:00",
-      "tree_id": "44dbae0c9d238b29290c219828309c715e1e6e27",
-      "url": "https://github.com/Juwatomfri/ISRPO_lab2/commit/dd5fdd8e198def344c12c86a461948dc255e8b4e"
+      "id": "dec08b5ff0aa383e0e4ed53edbd916c62db046e1",
+      "message": "Update code4",
+      "timestamp": "2024-12-25T23:57:00+03:00",
+      "tree_id": "d70aa66456bf61b524b257cbf9ce0cd0edfc1a68",
+      "url": "https://github.com/Juwatomfri/ISRPO_lab2/commit/dec08b5ff0aa383e0e4ed53edbd916c62db046e1"
     }
   ],
-  "compare": "https://github.com/Juwatomfri/ISRPO_lab2/compare/f6be24fd5664...dd5fdd8e198d",
+  "compare": "https://github.com/Juwatomfri/ISRPO_lab2/compare/093c628d08cb...dec08b5ff0aa",
   "created": false,
   "deleted": false,
   "forced": false,
@@ -38,11 +38,11 @@
       "username": "Juwatomfri"
     },
     "distinct": true,
-    "id": "dd5fdd8e198def344c12c86a461948dc255e8b4e",
-    "message": "Update code2",
-    "timestamp": "2024-12-25T23:50:12+03:00",
-    "tree_id": "44dbae0c9d238b29290c219828309c715e1e6e27",
-    "url": "https://github.com/Juwatomfri/ISRPO_lab2/commit/dd5fdd8e198def344c12c86a461948dc255e8b4e"
+    "id": "dec08b5ff0aa383e0e4ed53edbd916c62db046e1",
+    "message": "Update code4",
+    "timestamp": "2024-12-25T23:57:00+03:00",
+    "tree_id": "d70aa66456bf61b524b257cbf9ce0cd0edfc1a68",
+    "url": "https://github.com/Juwatomfri/ISRPO_lab2/commit/dec08b5ff0aa383e0e4ed53edbd916c62db046e1"
   },
   "pusher": {
     "email": "140343442+Juwatomfri@users.noreply.github.com",
@@ -132,7 +132,7 @@
     },
     "private": false,
     "pulls_url": "https://api.github.com/repos/Juwatomfri/ISRPO_lab2/pulls{/number}",
-    "pushed_at": 1735159818,
+    "pushed_at": 1735160226,
     "releases_url": "https://api.github.com/repos/Juwatomfri/ISRPO_lab2/releases{/id}",
     "size": 8787,
     "ssh_url": "git@github.com:Juwatomfri/ISRPO_lab2.git",
@@ -147,7 +147,7 @@
     "teams_url": "https://api.github.com/repos/Juwatomfri/ISRPO_lab2/teams",
     "topics": [],
     "trees_url": "https://api.github.com/repos/Juwatomfri/ISRPO_lab2/git/trees{/sha}",
-    "updated_at": "2024-12-25T20:49:34Z",
+    "updated_at": "2024-12-25T20:55:37Z",
     "url": "https://github.com/Juwatomfri/ISRPO_lab2",
     "visibility": "public",
     "watchers": 0,

@@ -1,0 +1,54 @@
+﻿2024-12-25T21:00:12.4059207Z Current runner version: '2.321.0'
+2024-12-25T21:00:12.4067015Z Runner name: 'DESKTOP-PO491Q3'
+2024-12-25T21:00:12.4067593Z Runner group name: 'Default'
+2024-12-25T21:00:12.4068195Z Machine name: 'DESKTOP-PO491Q3'
+2024-12-25T21:00:12.4071519Z ##[group]GITHUB_TOKEN Permissions
+2024-12-25T21:00:12.4074249Z Contents: read
+2024-12-25T21:00:12.4074778Z Metadata: read
+2024-12-25T21:00:12.4075117Z Packages: read
+2024-12-25T21:00:12.4075474Z ##[endgroup]
+2024-12-25T21:00:12.4078126Z Secret source: Actions
+2024-12-25T21:00:12.4078615Z Prepare workflow directory
+2024-12-25T21:00:12.4455441Z Prepare all required actions
+2024-12-25T21:00:12.4495962Z Getting action download info
+2024-12-25T21:00:12.8193603Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2024-12-25T21:00:15.7674863Z Complete job name: build-and-redeploy
+2024-12-25T21:00:15.8289797Z ##[group]Run actions/checkout@v3
+2024-12-25T21:00:15.8290384Z with:
+2024-12-25T21:00:15.8290577Z   repository: Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:15.8291027Z   token: ***
+2024-12-25T21:00:15.8291177Z   ssh-strict: true
+2024-12-25T21:00:15.8291346Z   persist-credentials: true
+2024-12-25T21:00:15.8291538Z   clean: true
+2024-12-25T21:00:15.8291710Z   sparse-checkout-cone-mode: true
+2024-12-25T21:00:15.8291912Z   fetch-depth: 1
+2024-12-25T21:00:15.8292122Z   fetch-tags: false
+2024-12-25T21:00:15.8292283Z   lfs: false
+2024-12-25T21:00:15.8292436Z   submodules: false
+2024-12-25T21:00:15.8292607Z   set-safe-directory: true
+2024-12-25T21:00:15.8292958Z ##[endgroup]
+2024-12-25T21:00:16.0362841Z Syncing repository: Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:16.0364152Z ##[group]Getting Git version info
+2024-12-25T21:00:16.0364664Z Working directory is 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2'
+2024-12-25T21:00:16.0640503Z [command]"C:\Program Files\Git\cmd\git.exe" version
+2024-12-25T21:00:16.0851416Z git version 2.41.0.windows.3
+2024-12-25T21:00:16.0887051Z ##[endgroup]
+2024-12-25T21:00:16.0900221Z Copying 'C:\Users\Anna\.gitconfig' to 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\e699fdc8-1dfb-46e1-96ed-437a0ab175b7\.gitconfig'
+2024-12-25T21:00:16.0920826Z Temporarily overriding HOME='C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\e699fdc8-1dfb-46e1-96ed-437a0ab175b7' before making global git config changes
+2024-12-25T21:00:16.0921629Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-25T21:00:16.0928885Z [command]"C:\Program Files\Git\cmd\git.exe" config --global --add safe.directory C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2
+2024-12-25T21:00:16.1182164Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --get remote.origin.url
+2024-12-25T21:00:16.1379998Z https://github.com/Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:16.1419928Z ##[group]Removing previously created refs, to avoid conflicts
+2024-12-25T21:00:16.1426338Z [command]"C:\Program Files\Git\cmd\git.exe" rev-parse --symbolic-full-name --verify --quiet HEAD
+2024-12-25T21:00:16.1647513Z refs/heads/main
+2024-12-25T21:00:16.1680530Z [command]"C:\Program Files\Git\cmd\git.exe" checkout --detach
+2024-12-25T21:00:16.9353325Z HEAD is now at 093c628 Обновлён файл workflow
+2024-12-25T21:00:16.9862031Z ##[endgroup]
+2024-12-25T21:00:16.9869074Z [command]"C:\Program Files\Git\cmd\git.exe" submodule status
+2024-12-25T21:00:17.3992709Z ##[error]fatal: no submodule mapping found in .gitmodules for path 'actions-runner/_work/ISRPO_lab2/ISRPO_lab2'
+2024-12-25T21:00:17.4033948Z Bad Submodules found, removing existing files
+2024-12-25T21:00:17.4034450Z ##[group]Cleaning the repository
+2024-12-25T21:00:17.4041380Z [command]"C:\Program Files\Git\cmd\git.exe" clean -ffdx
+2024-12-25T21:00:17.4282516Z [command]"C:\Program Files\Git\cmd\git.exe" reset --hard HEAD
+2024-12-

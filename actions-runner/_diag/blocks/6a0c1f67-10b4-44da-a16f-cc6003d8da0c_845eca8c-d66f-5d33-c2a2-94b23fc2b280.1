@@ -1,0 +1,46 @@
+﻿2024-12-25T21:00:15.8289751Z ##[group]Run actions/checkout@v3
+2024-12-25T21:00:15.8290378Z with:
+2024-12-25T21:00:15.8290573Z   repository: Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:15.8291017Z   token: ***
+2024-12-25T21:00:15.8291173Z   ssh-strict: true
+2024-12-25T21:00:15.8291343Z   persist-credentials: true
+2024-12-25T21:00:15.8291531Z   clean: true
+2024-12-25T21:00:15.8291706Z   sparse-checkout-cone-mode: true
+2024-12-25T21:00:15.8291909Z   fetch-depth: 1
+2024-12-25T21:00:15.8292119Z   fetch-tags: false
+2024-12-25T21:00:15.8292280Z   lfs: false
+2024-12-25T21:00:15.8292433Z   submodules: false
+2024-12-25T21:00:15.8292600Z   set-safe-directory: true
+2024-12-25T21:00:15.8292948Z ##[endgroup]
+2024-12-25T21:00:16.0362788Z Syncing repository: Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:16.0364138Z ##[group]Getting Git version info
+2024-12-25T21:00:16.0364660Z Working directory is 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2'
+2024-12-25T21:00:16.0640345Z [command]"C:\Program Files\Git\cmd\git.exe" version
+2024-12-25T21:00:16.0851331Z git version 2.41.0.windows.3
+2024-12-25T21:00:16.0887027Z ##[endgroup]
+2024-12-25T21:00:16.0900199Z Copying 'C:\Users\Anna\.gitconfig' to 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\e699fdc8-1dfb-46e1-96ed-437a0ab175b7\.gitconfig'
+2024-12-25T21:00:16.0920738Z Temporarily overriding HOME='C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\e699fdc8-1dfb-46e1-96ed-437a0ab175b7' before making global git config changes
+2024-12-25T21:00:16.0921624Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-25T21:00:16.0928857Z [command]"C:\Program Files\Git\cmd\git.exe" config --global --add safe.directory C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2
+2024-12-25T21:00:16.1182039Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --get remote.origin.url
+2024-12-25T21:00:16.1379948Z https://github.com/Juwatomfri/ISRPO_lab2
+2024-12-25T21:00:16.1419898Z ##[group]Removing previously created refs, to avoid conflicts
+2024-12-25T21:00:16.1426330Z [command]"C:\Program Files\Git\cmd\git.exe" rev-parse --symbolic-full-name --verify --quiet HEAD
+2024-12-25T21:00:16.1647440Z refs/heads/main
+2024-12-25T21:00:16.1680470Z [command]"C:\Program Files\Git\cmd\git.exe" checkout --detach
+2024-12-25T21:00:16.9353262Z HEAD is now at 093c628 Обновлён файл workflow
+2024-12-25T21:00:16.9861977Z ##[endgroup]
+2024-12-25T21:00:16.9869067Z [command]"C:\Program Files\Git\cmd\git.exe" submodule status
+2024-12-25T21:00:17.3992651Z ##[error]fatal: no submodule mapping found in .gitmodules for path 'actions-runner/_work/ISRPO_lab2/ISRPO_lab2'
+2024-12-25T21:00:17.4033921Z Bad Submodules found, removing existing files
+2024-12-25T21:00:17.4034445Z ##[group]Cleaning the repository
+2024-12-25T21:00:17.4041359Z [command]"C:\Program Files\Git\cmd\git.exe" clean -ffdx
+2024-12-25T21:00:17.4282315Z [command]"C:\Program Files\Git\cmd\git.exe" reset --hard HEAD
+2024-12-25T21:00:17.4708142Z HEAD is now at 093c628 Обновлён файл workflow
+2024-12-25T21:00:17.4755647Z ##[endgroup]
+2024-12-25T21:00:17.4772255Z ##[warning]Unable to clean or reset the repository. The repository will be recreated instead.
+2024-12-25T21:00:17.4775426Z Deleting the contents of 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2'
+2024-12-25T21:00:17.5803562Z ##[group]Initializing the repository
+2024-12-25T21:00:17.5818879Z [command]"C:\Program Files\Git\cmd\git.exe" init C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2
+2024-12-25T21:00:17.6284206Z Initialized empty Git repository in C:/Anna/ITMO/ISRPO/OpenIP/python-flask-server-generated-ISRPO/actions-runner/_work/ISRPO_lab2/ISRPO_lab2/.git/
+2024-12-25T21:00:17.6328893Z [command]"C:\Program Files\Git\cmd\git.exe" 
