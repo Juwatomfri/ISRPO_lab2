@@ -7,21 +7,18 @@ on:
 
 jobs:
   build-and-redeploy:
-    runs-on: self-hosted # Указывает, что процесс выполняется на вашей машине
+    runs-on: ubuntu-latest
 
     steps:
-      # 1. Клонируем код
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          submodules: true
+        submodules: true
 
-      # 2. Сборка Docker-образа
       - name: Build Docker Image
         run: |
           docker build -t flask-app:latest .
 
-      # 3. Остановка и запуск контейнера
       - name: Restart Docker Container
         run: |
           docker stop flask-app || true
