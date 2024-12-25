@@ -13,6 +13,8 @@ jobs:
       # 1. Клонируем код
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       # 2. Сборка Docker-образа
       - name: Build Docker Image
