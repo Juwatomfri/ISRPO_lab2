@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - master
-
+#очень важный комментарий
 jobs:
   build-and-redeploy:
     runs-on: ubuntu-latest
