@@ -1,0 +1,27 @@
+name: CI/CD for Flask Server on Local Docker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-redeploy:
+    runs-on: self-hosted # Указывает, что процесс выполняется на вашей машине
+
+    steps:
+      # 1. Клонируем код
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # 2. Сборка Docker-образа
+      - name: Build Docker Image
+        run: |
+          docker build -t flask-app:latest .
+
+      # 3. Остановка и запуск контейнера
+      - name: Restart Docker Container
+        run: |
+          docker stop flask-app || true
+          docker rm flask-app || true
+          docker run -d --name flask-app -p 5000:5000 flask-app:latest
