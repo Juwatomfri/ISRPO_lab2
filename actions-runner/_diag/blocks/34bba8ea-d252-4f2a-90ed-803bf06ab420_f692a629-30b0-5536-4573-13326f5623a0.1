@@ -1,0 +1,302 @@
+﻿2024-12-25T20:49:36.6598987Z Current runner version: '2.321.0'
+2024-12-25T20:49:36.6606517Z Runner name: 'DESKTOP-PO491Q3'
+2024-12-25T20:49:36.6607184Z Runner group name: 'Default'
+2024-12-25T20:49:36.6607852Z Machine name: 'DESKTOP-PO491Q3'
+2024-12-25T20:49:36.6611611Z ##[group]GITHUB_TOKEN Permissions
+2024-12-25T20:49:36.6613908Z Contents: read
+2024-12-25T20:49:36.6614358Z Metadata: read
+2024-12-25T20:49:36.6614747Z Packages: read
+2024-12-25T20:49:36.6615109Z ##[endgroup]
+2024-12-25T20:49:36.6617484Z Secret source: Actions
+2024-12-25T20:49:36.6618411Z Prepare workflow directory
+2024-12-25T20:49:36.6961427Z Prepare all required actions
+2024-12-25T20:49:36.6993462Z Getting action download info
+2024-12-25T20:49:36.9499186Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2024-12-25T20:49:38.3677222Z Complete job name: build-and-redeploy
+2024-12-25T20:49:38.4401023Z ##[group]Run actions/checkout@v3
+2024-12-25T20:49:38.4402060Z with:
+2024-12-25T20:49:38.4402678Z   repository: Juwatomfri/ISRPO_lab2
+2024-12-25T20:49:38.4403712Z   token: ***
+2024-12-25T20:49:38.4404229Z   ssh-strict: true
+2024-12-25T20:49:38.4404794Z   persist-credentials: true
+2024-12-25T20:49:38.4405444Z   clean: true
+2024-12-25T20:49:38.4405982Z   sparse-checkout-cone-mode: true
+2024-12-25T20:49:38.4406638Z   fetch-depth: 1
+2024-12-25T20:49:38.4407146Z   fetch-tags: false
+2024-12-25T20:49:38.4407662Z   lfs: false
+2024-12-25T20:49:38.4408205Z   submodules: false
+2024-12-25T20:49:38.4408746Z   set-safe-directory: true
+2024-12-25T20:49:38.4409546Z ##[endgroup]
+2024-12-25T20:49:38.6384173Z Syncing repository: Juwatomfri/ISRPO_lab2
+2024-12-25T20:49:38.6386138Z ##[group]Getting Git version info
+2024-12-25T20:49:38.6387579Z Working directory is 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2'
+2024-12-25T20:49:38.6631878Z [command]"C:\Program Files\Git\cmd\git.exe" version
+2024-12-25T20:49:38.6857827Z git version 2.41.0.windows.3
+2024-12-25T20:49:38.6894151Z ##[endgroup]
+2024-12-25T20:49:38.6905778Z Copying 'C:\Users\Anna\.gitconfig' to 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\157a43cd-2bbf-4807-8283-c7202a00aa64\.gitconfig'
+2024-12-25T20:49:38.6924147Z Temporarily overriding HOME='C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\_temp\157a43cd-2bbf-4807-8283-c7202a00aa64' before making global git config changes
+2024-12-25T20:49:38.6926309Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-25T20:49:38.6931380Z [command]"C:\Program Files\Git\cmd\git.exe" config --global --add safe.directory C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2
+2024-12-25T20:49:38.7177278Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --get remote.origin.url
+2024-12-25T20:49:38.7383021Z https://github.com/Juwatomfri/ISRPO_lab2
+2024-12-25T20:49:38.7420030Z ##[group]Removing previously created refs, to avoid conflicts
+2024-12-25T20:49:38.7426686Z [command]"C:\Program Files\Git\cmd\git.exe" rev-parse --symbolic-full-name --verify --quiet HEAD
+2024-12-25T20:49:38.7627968Z refs/heads/main
+2024-12-25T20:49:38.7657102Z [command]"C:\Program Files\Git\cmd\git.exe" checkout --detach
+2024-12-25T20:49:38.8105405Z HEAD is now at 82806e6 Тестовый коммит
+2024-12-25T20:49:38.8667458Z ##[endgroup]
+2024-12-25T20:49:38.8671907Z [command]"C:\Program Files\Git\cmd\git.exe" submodule status
+2024-12-25T20:49:39.2691675Z ##[error]fatal: no submodule mapping found in .gitmodules for path 'actions-runner/_work/ISRPO_lab2/ISRPO_lab2'
+2024-12-25T20:49:39.2748913Z Bad Submodules found, removing existing files
+2024-12-25T20:49:39.2750061Z ##[group]Cleaning the repository
+2024-12-25T20:49:39.2756258Z [command]"C:\Program Files\Git\cmd\git.exe" clean -ffdx
+2024-12-25T20:49:39.3003356Z [command]"C:\Program Files\Git\cmd\git.exe" reset --hard HEAD
+2024-12-25T20:49:39.3328238Z HEAD is now at 82806e6 Тестовый коммит
+2024-12-25T20:49:39.3356134Z ##[endgroup]
+2024-12-25T20:49:39.3366862Z ##[warning]Unable to clean or reset the repository. The repository will be recreated instead.
+2024-12-25T20:49:39.3369671Z Deleting the contents of 'C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2'
+2024-12-25T20:49:39.4117664Z ##[group]Initializing the repository
+2024-12-25T20:49:39.4124320Z [command]"C:\Program Files\Git\cmd\git.exe" init C:\Anna\ITMO\ISRPO\OpenIP\python-flask-server-generated-ISRPO\actions-runner\_work\ISRPO_lab2\ISRPO_lab2
+2024-12-25T20:49:39.4428568Z Initialized empty Git repository in C:/Anna/ITMO/ISRPO/OpenIP/python-flask-server-generated-ISRPO/actions-runner/_work/ISRPO_lab2/ISRPO_lab2/.git/
+2024-12-25T20:49:39.4465581Z [command]"C:\Program Files\Git\cmd\git.exe" remote add origin https://github.com/Juwatomfri/ISRPO_lab2
+2024-12-25T20:49:39.4746947Z ##[endgroup]
+2024-12-25T20:49:39.4747878Z ##[group]Disabling automatic garbage collection
+2024-12-25T20:49:39.4752843Z [command]"C:\Program Files\Git\cmd\git.exe" config --local gc.auto 0
+2024-12-25T20:49:39.4981858Z ##[endgroup]
+2024-12-25T20:49:39.4982761Z ##[group]Setting up auth
+2024-12-25T20:49:39.4989926Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2024-12-25T20:49:39.5220968Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2024-12-25T20:49:39.8983505Z [command]"C:\Program Files\Git\cmd\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-25T20:49:39.9204476Z [command]"C:\Program Files\Git\cmd\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2024-12-25T20:49:40.3463522Z [command]"C:\Program Files\Git\cmd\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2024-12-25T20:49:40.3757890Z ##[endgroup]
+2024-12-25T20:49:40.3758770Z ##[group]Fetching the repository
+2024-12-25T20:49:40.3773505Z [command]"C:\Program Files\Git\cmd\git.exe" -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +f6be24fd56649f61c1ccc0f1c779a35b2e1428da:refs/remotes/origin/main
+2024-12-25T20:49:41.0526477Z remote: Enumerating objects: 479, done.        
+2024-12-25T20:49:41.0526792Z remote: Counting objects:   0% (1/479)        
+2024-12-25T20:49:41.0527184Z remote: Counting objects:   1% (5/479)        
+2024-12-25T20:49:41.0527495Z remote: Counting objects:   2% (10/479)        
+2024-12-25T20:49:41.0527704Z remote: Counting objects:   3% (15/479)        
+2024-12-25T20:49:41.0528100Z remote: Counting objects:   4% (20/479)        
+2024-12-25T20:49:41.0528309Z remote: Counting objects:   5% (24/479)        
+2024-12-25T20:49:41.0528546Z remote: Counting objects:   6% (29/479)        
+2024-12-25T20:49:41.0528762Z remote: Counting objects:   7% (34/479)        
+2024-12-25T20:49:41.0528972Z remote: Counting objects:   8% (39/479)        
+2024-12-25T20:49:41.0529174Z remote: Counting objects:   9% (44/479)        
+2024-12-25T20:49:41.0529372Z remote: Counting objects:  10% (48/479)        
+2024-12-25T20:49:41.0529576Z remote: Counting objects:  11% (53/479)        
+2024-12-25T20:49:41.0529808Z remote: Counting objects:  12% (58/479)        
+2024-12-25T20:49:41.0530280Z remote: Counting objects:  13% (63/479)        
+2024-12-25T20:49:41.0530528Z remote: Counting objects:  14% (68/479)        
+2024-12-25T20:49:41.0530741Z remote: Counting objects:  15% (72/479)        
+2024-12-25T20:49:41.0530952Z remote: Counting objects:  16% (77/479)        
+2024-12-25T20:49:41.0531167Z remote: Counting objects:  17% (82/479)        
+2024-12-25T20:49:41.0531378Z remote: Counting objects:  18% (87/479)        
+2024-12-25T20:49:41.0532418Z remote: Counting objects:  19% (92/479)        
+2024-12-25T20:49:41.0532639Z remote: Counting objects:  20% (96/479)        
+2024-12-25T20:49:41.0532853Z remote: Counting objects:  21% (101/479)        
+2024-12-25T20:49:41.0533068Z remote: Counting objects:  22% (106/479)        
+2024-12-25T20:49:41.0533284Z remote: Counting objects:  23% (111/479)        
+2024-12-25T20:49:41.0533566Z remote: Counting objects:  24% (115/479)        
+2024-12-25T20:49:41.0533851Z remote: Counting objects:  25% (120/479)        
+2024-12-25T20:49:41.0534065Z remote: Counting objects:  26% (125/479)        
+2024-12-25T20:49:41.0534405Z remote: Counting objects:  27% (130/479)        
+2024-12-25T20:49:41.0534680Z remote: Counting objects:  28% (135/479)        
+2024-12-25T20:49:41.0534945Z remote: Counting objects:  29% (139/479)        
+2024-12-25T20:49:41.0535623Z remote: Counting objects:  30% (144/479)        
+2024-12-25T20:49:41.0535918Z remote: Counting objects:  31% (149/479)        
+2024-12-25T20:49:41.0536205Z remote: Counting objects:  32% (154/479)        
+2024-12-25T20:49:41.0536435Z remote: Counting objects:  33% (159/479)        
+2024-12-25T20:49:41.0536651Z remote: Counting objects:  34% (163/479)        
+2024-12-25T20:49:41.0536994Z remote: Counting objects:  35% (168/479)        
+2024-12-25T20:49:41.0537210Z remote: Counting objects:  36% (173/479)        
+2024-12-25T20:49:41.0537421Z remote: Counting objects:  37% (178/479)        
+2024-12-25T20:49:41.0537626Z remote: Counting objects:  38% (183/479)        
+2024-12-25T20:49:41.0537838Z remote: Counting objects:  39% (187/479)        
+2024-12-25T20:49:41.0538048Z remote: Counting objects:  40% (192/479)        
+2024-12-25T20:49:41.0538251Z remote: Counting objects:  41% (197/479)        
+2024-12-25T20:49:41.0538461Z remote: Counting objects:  42% (202/479)        
+2024-12-25T20:49:41.0538669Z remote: Counting objects:  43% (206/479)        
+2024-12-25T20:49:41.0538871Z remote: Counting objects:  44% (211/479)        
+2024-12-25T20:49:41.0539080Z remote: Counting objects:  45% (216/479)        
+2024-12-25T20:49:41.0539286Z remote: Counting objects:  46% (221/479)        
+2024-12-25T20:49:41.0539492Z remote: Counting objects:  47% (226/479)        
+2024-12-25T20:49:41.0539738Z remote: Counting objects:  48% (230/479)        
+2024-12-25T20:49:41.0539947Z remote: Counting objects:  49% (235/479)        
+2024-12-25T20:49:41.0540147Z remote: Counting objects:  50% (240/479)        
+2024-12-25T20:49:41.0540351Z remote: Counting objects:  51% (245/479)        
+2024-12-25T20:49:41.0540558Z remote: Counting objects:  52% (250/479)        
+2024-12-25T20:49:41.0540758Z remote: Counting objects:  53% (254/479)        
+2024-12-25T20:49:41.0540960Z remote: Counting objects:  54% (259/479)        
+2024-12-25T20:49:41.0541165Z remote: Counting objects:  55% (264/479)        
+2024-12-25T20:49:41.0541370Z remote: Counting objects:  56% (269/479)        
+2024-12-25T20:49:41.0541576Z remote: Counting objects:  57% (274/479)        
+2024-12-25T20:49:41.0541790Z remote: Counting objects:  58% (278/479)        
+2024-12-25T20:49:41.0663931Z remote: Counting objects:  59% (283/479)        
+2024-12-25T20:49:41.0664766Z remote: Counting objects:  60% (288/479)        
+2024-12-25T20:49:41.0665597Z remote: Counting objects:  61% (293/479)        
+2024-12-25T20:49:41.0666244Z remote: Counting objects:  62% (297/479)        
+2024-12-25T20:49:41.0666891Z remote: Counting objects:  63% (302/479)        
+2024-12-25T20:49:41.0667536Z remote: Counting objects:  64% (307/479)        
+2024-12-25T20:49:41.0668169Z remote: Counting objects:  65% (312/479)        
+2024-12-25T20:49:41.0668808Z remote: Counting objects:  66% (317/479)        
+2024-12-25T20:49:41.0669518Z remote: Counting objects:  67% (321/479)        
+2024-12-25T20:49:41.0670140Z remote: Counting objects:  68% (326/479)        
+2024-12-25T20:49:41.0670871Z remote: Counting objects:  69% (331/479)        
+2024-12-25T20:49:41.0671543Z remote: Counting objects:  70% (336/479)        
+2024-12-25T20:49:41.0672934Z remote: Counting objects:  71% (341/479)        
+2024-12-25T20:49:41.0673617Z remote: Counting objects:  72% (345/479)        
+2024-12-25T20:49:41.0674262Z remote: Counting objects:  73% (350/479)        
+2024-12-25T20:49:41.0674889Z remote: Counting objects:  74% (355/479)        
+2024-12-25T20:49:41.0675585Z remote: Counting objects:  75% (360/479)        
+2024-12-25T20:49:41.0676222Z remote: Counting objects:  76% (365/479)        
+2024-12-25T20:49:41.0677010Z remote: Counting objects:  77% (369/479)        
+2024-12-25T20:49:41.0677635Z remote: Counting objects:  78% (374/479)        
+2024-12-25T20:49:41.0678266Z remote: Counting objects:  79% (379/479)        
+2024-12-25T20:49:41.0678899Z remote: Counting objects:  80% (384/479)        
+2024-12-25T20:49:41.0679529Z remote: Counting objects:  81% (388/479)        
+2024-12-25T20:49:41.0680491Z remote: Counting objects:  82% (393/479)        
+2024-12-25T20:49:41.0681173Z remote: Counting objects:  83% (398/479)        
+2024-12-25T20:49:41.0681836Z remote: Counting objects:  84% (403/479)        
+2024-12-25T20:49:41.0682476Z remote: Counting objects:  85% (408/479)        
+2024-12-25T20:49:41.0683119Z remote: Counting objects:  86% (412/479)        
+2024-12-25T20:49:41.0683759Z remote: Counting objects:  87% (417/479)        
+2024-12-25T20:49:41.0684415Z remote: Counting objects:  88% (422/479)        
+2024-12-25T20:49:41.0685072Z remote: Counting objects:  89% (427/479)        
+2024-12-25T20:49:41.0685748Z remote: Counting objects:  90% (432/479)        
+2024-12-25T20:49:41.0686438Z remote: Counting objects:  91% (436/479)        
+2024-12-25T20:49:41.0687131Z remote: Counting objects:  92% (441/479)        
+2024-12-25T20:49:41.0687892Z remote: Counting objects:  93% (446/479)        
+2024-12-25T20:49:41.0688618Z remote: Counting objects:  94% (451/479)        
+2024-12-25T20:49:41.0689367Z remote: Counting objects:  95% (456/479)        
+2024-12-25T20:49:41.0690084Z remote: Counting objects:  96% (460/479)        
+2024-12-25T20:49:41.0690844Z remote: Counting objects:  97% (465/479)        
+2024-12-25T20:49:41.0691562Z remote: Counting objects:  98% (470/479)        
+2024-12-25T20:49:41.0692321Z remote: Counting objects:  99% (475/479)        
+2024-12-25T20:49:41.0693046Z remote: Counting objects: 100% (479/479)        
+2024-12-25T20:49:41.0693845Z remote: Counting objects: 100% (479/479), done.        
+2024-12-25T20:49:41.0694651Z remote: Compressing objects:   0% (1/319)        
+2024-12-25T20:49:41.0695419Z remote: Compressing objects:   1% (4/319)        
+2024-12-25T20:49:41.0696122Z remote: Compressing objects:   2% (7/319)        
+2024-12-25T20:49:41.0696814Z remote: Compressing objects:   3% (10/319)        
+2024-12-25T20:49:41.0697538Z remote: Compressing objects:   4% (13/319)        
+2024-12-25T20:49:41.0698292Z remote: Compressing objects:   5% (16/319)        
+2024-12-25T20:49:41.0698982Z remote: Compressing objects:   6% (20/319)        
+2024-12-25T20:49:41.0699670Z remote: Compressing objects:   7% (23/319)        
+2024-12-25T20:49:41.0700377Z remote: Compressing objects:   8% (26/319)        
+2024-12-25T20:49:41.0701056Z remote: Compressing objects:   9% (29/319)        
+2024-12-25T20:49:41.0701747Z remote: Compressing objects:  10% (32/319)        
+2024-12-25T20:49:41.0702430Z remote: Compressing objects:  11% (36/319)        
+2024-12-25T20:49:41.0703107Z remote: Compressing objects:  12% (39/319)        
+2024-12-25T20:49:41.0703800Z remote: Compressing objects:  13% (42/319)        
+2024-12-25T20:49:41.0704494Z remote: Compressing objects:  14% (45/319)        
+2024-12-25T20:49:41.0705170Z remote: Compressing objects:  15% (48/319)        
+2024-12-25T20:49:41.0705888Z remote: Compressing objects:  16% (52/319)        
+2024-12-25T20:49:41.0706578Z remote: Compressing objects:  17% (55/319)        
+2024-12-25T20:49:41.0707274Z remote: Compressing objects:  18% (58/319)        
+2024-12-25T20:49:41.0708092Z remote: Compressing objects:  19% (61/319)        
+2024-12-25T20:49:41.0709118Z remote: Compressing objects:  20% (64/319)        
+2024-12-25T20:49:41.0709817Z remote: Compressing objects:  21% (67/319)        
+2024-12-25T20:49:41.0710536Z remote: Compressing objects:  22% (71/319)        
+2024-12-25T20:49:41.0711224Z remote: Compressing objects:  23% (74/319)        
+2024-12-25T20:49:41.0711919Z remote: Compressing objects:  24% (77/319)        
+2024-12-25T20:49:41.0712613Z remote: Compressing objects:  25% (80/319)        
+2024-12-25T20:49:41.0713292Z remote: Compressing objects:  26% (83/319)        
+2024-12-25T20:49:41.0713989Z remote: Compressing objects:  27% (87/319)        
+2024-12-25T20:49:41.0714679Z remote: Compressing objects:  28% (90/319)        
+2024-12-25T20:49:41.0715387Z remote: Compressing objects:  29% (93/319)        
+2024-12-25T20:49:41.0716074Z remote: Compressing objects:  30% (96/319)        
+2024-12-25T20:49:41.0716991Z remote: Compressing objects:  31% (99/319)        
+2024-12-25T20:49:41.0717701Z remote: Compressing objects:  32% (103/319)        
+2024-12-25T20:49:41.0718444Z remote: Compressing objects:  33% (106/319)        
+2024-12-25T20:49:41.0719152Z remote: Compressing objects:  34% (109/319)        
+2024-12-25T20:49:41.0719846Z remote: Compressing objects:  35% (112/319)        
+2024-12-25T20:49:41.0720557Z remote: Compressing objects:  36% (115/319)        
+2024-12-25T20:49:41.0721252Z remote: Compressing objects:  37% (119/319)        
+2024-12-25T20:49:41.0721937Z remote: Compressing objects:  38% (122/319)        
+2024-12-25T20:49:41.0722638Z remote: Compressing objects:  39% (125/319)        
+2024-12-25T20:49:41.0723332Z remote: Compressing objects:  40% (128/319)        
+2024-12-25T20:49:41.0724009Z remote: Compressing objects:  41% (131/319)        
+2024-12-25T20:49:41.0724700Z remote: Compressing objects:  42% (134/319)        
+2024-12-25T20:49:41.0725438Z remote: Compressing objects:  43% (138/319)        
+2024-12-25T20:49:41.0726381Z remote: Compressing objects:  44% (141/319)        
+2024-12-25T20:49:41.0727089Z remote: Compressing objects:  45% (144/319)        
+2024-12-25T20:49:41.0727801Z remote: Compressing objects:  46% (147/319)        
+2024-12-25T20:49:41.0728499Z remote: Compressing objects:  47% (150/319)        
+2024-12-25T20:49:41.0729205Z remote: Compressing objects:  48% (154/319)        
+2024-12-25T20:49:41.0729997Z remote: Compressing objects:  49% (157/319)        
+2024-12-25T20:49:41.0730688Z remote: Compressing objects:  50% (160/319)        
+2024-12-25T20:49:41.0731413Z remote: Compressing objects:  51% (163/319)        
+2024-12-25T20:49:41.0732105Z remote: Compressing objects:  52% (166/319)        
+2024-12-25T20:49:41.0732792Z remote: Compressing objects:  53% (170/319)        
+2024-12-25T20:49:41.0733522Z remote: Compressing objects:  54% (173/319)        
+2024-12-25T20:49:41.0734264Z remote: Compressing objects:  55% (176/319)        
+2024-12-25T20:49:41.0735505Z remote: Compressing objects:  56% (179/319)        
+2024-12-25T20:49:41.0736471Z remote: Compressing objects:  57% (182/319)        
+2024-12-25T20:49:41.0737444Z remote: Compressing objects:  58% (186/319)        
+2024-12-25T20:49:41.0738508Z remote: Compressing objects:  59% (189/319)        
+2024-12-25T20:49:41.0739658Z remote: Compressing objects:  60% (192/319)        
+2024-12-25T20:49:41.0740820Z remote: Compressing objects:  61% (195/319)        
+2024-12-25T20:49:41.0741898Z remote: Compressing objects:  62% (198/319)        
+2024-12-25T20:49:41.0743074Z remote: Compressing objects:  63% (201/319)        
+2024-12-25T20:49:41.0744425Z remote: Compressing objects:  64% (205/319)        
+2024-12-25T20:49:41.0745624Z remote: Compressing objects:  65% (208/319)        
+2024-12-25T20:49:41.0746745Z remote: Compressing objects:  66% (211/319)        
+2024-12-25T20:49:41.0747900Z remote: Compressing objects:  67% (214/319)        
+2024-12-25T20:49:41.0748768Z remote: Compressing objects:  68% (217/319)        
+2024-12-25T20:49:41.0749449Z remote: Compressing objects:  69% (221/319)        
+2024-12-25T20:49:41.0750393Z remote: Compressing objects:  70% (224/319)        
+2024-12-25T20:49:41.0754169Z remote: Compressing objects:  71% (227/319)        
+2024-12-25T20:49:41.0755211Z remote: Compressing objects:  72% (230/319)        
+2024-12-25T20:49:41.0756217Z remote: Compressing objects:  73% (233/319)        
+2024-12-25T20:49:41.0756940Z remote: Compressing objects:  74% (237/319)        
+2024-12-25T20:49:41.0757772Z remote: Compressing objects:  75% (240/319)        
+2024-12-25T20:49:41.0758477Z remote: Compressing objects:  76% (243/319)        
+2024-12-25T20:49:41.0759170Z remote: Compressing objects:  77% (246/319)        
+2024-12-25T20:49:41.0759982Z remote: Compressing objects:  78% (249/319)        
+2024-12-25T20:49:41.0760675Z remote: Compressing objects:  79% (253/319)        
+2024-12-25T20:49:41.1072320Z remote: Compressing objects:  80% (256/319)        
+2024-12-25T20:49:41.1074899Z remote: Compressing objects:  81% (259/319)        
+2024-12-25T20:49:41.1075705Z remote: Compressing objects:  82% (262/319)        
+2024-12-25T20:49:41.1076658Z remote: Compressing objects:  83% (265/319)        
+2024-12-25T20:49:41.1077503Z remote: Compressing objects:  84% (268/319)        
+2024-12-25T20:49:41.1078124Z remote: Compressing objects:  85% (272/319)        
+2024-12-25T20:49:41.1078751Z remote: Compressing objects:  86% (275/319)        
+2024-12-25T20:49:41.1079380Z remote: Compressing objects:  87% (278/319)        
+2024-12-25T20:49:41.1080021Z remote: Compressing objects:  88% (281/319)        
+2024-12-25T20:49:41.1080648Z remote: Compressing objects:  89% (284/319)        
+2024-12-25T20:49:41.1081422Z remote: Compressing objects:  90% (288/319)        
+2024-12-25T20:49:41.1082065Z remote: Compressing objects:  91% (291/319)        
+2024-12-25T20:49:41.1082728Z remote: Compressing objects:  92% (294/319)        
+2024-12-25T20:49:41.1083409Z remote: Compressing objects:  93% (297/319)        
+2024-12-25T20:49:41.1084071Z remote: Compressing objects:  94% (300/319)        
+2024-12-25T20:49:41.1084728Z remote: Compressing objects:  95% (304/319)        
+2024-12-25T20:49:41.1085406Z remote: Compressing objects:  96% (307/319)        
+2024-12-25T20:49:41.1086070Z remote: Compressing objects:  97% (310/319)        
+2024-12-25T20:49:41.1086766Z remote: Compressing objects:  98% (313/319)        
+2024-12-25T20:49:41.1087445Z remote: Compressing objects:  99% (316/319)        
+2024-12-25T20:49:41.1088120Z remote: Compressing objects: 100% (319/319)        
+2024-12-25T20:49:41.1088842Z remote: Compressing objects: 100% (319/319), done.        
+2024-12-25T20:49:41.1486801Z Receiving objects:   0% (1/479)
+2024-12-25T20:49:41.1487333Z Receiving objects:   1% (5/479)
+2024-12-25T20:49:41.1494497Z Receiving objects:   2% (10/479)
+2024-12-25T20:49:41.1497083Z Receiving objects:   3% (15/479)
+2024-12-25T20:49:41.1497567Z Receiving objects:   4% (20/479)
+2024-12-25T20:49:41.1500580Z Receiving objects:   5% (24/479)
+2024-12-25T20:49:41.1501033Z Receiving objects:   6% (29/479)
+2024-12-25T20:49:41.1504188Z Receiving objects:   7% (34/479)
+2024-12-25T20:49:41.1504709Z Receiving objects:   8% (39/479)
+2024-12-25T20:49:41.1505087Z Receiving objects:   9% (44/479)
+2024-12-25T20:49:41.1630823Z Receiving objects:  10% (48/479)
+2024-12-25T20:49:41.1631960Z Receiving objects:  11% (53/479)
+2024-12-25T20:49:41.1632418Z Receiving objects:  12% (58/479)
+2024-12-25T20:49:41.1648396Z Receiving objects:  13% (63/479)
+2024-12-25T20:49:41.1649204Z Receiving objects:  14% (68/479)
+2024-12-25T20:49:41.1802956Z Receiving objects:  15% (72/479)
+2024-12-25T20:49:41.1828296Z Receiving objects:  16% (77/479)
+2024-12-25T20:49:41.1831231Z Receiving objects:  17% (82/479)
+2024-12-25T20:49:41.1834114Z Receiving objects:  18% (87/479)
+2024-12-25T20:49:41.1848675Z Receiving objects:  19% (92/479)
+2024-12-25T20:49:41.1849106Z Receiving objects:  20% (96/479)
+2024-12-25T20:49:41.1852011Z Receiving objects:  21% (101/479)
+2024-12-25T20:49:41.1852481Z Receiving objects:  22% (

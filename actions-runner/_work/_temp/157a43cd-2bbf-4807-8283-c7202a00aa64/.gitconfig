@@ -1,0 +1,12 @@
+[core]
+	editor = \"C:\\Users\\Anna\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[user]
+	name = Juwatomfri
+	email = Anyagavriliuk@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[safe]
+	directory = C:\\Anna\\ITMO\\ISRPO\\OpenIP\\python-flask-server-generated-ISRPO\\actions-runner\\_work\\ISRPO_lab2\\ISRPO_lab2
