@@ -31,8 +31,8 @@ jobs:
 
       - name: Push Docker image to DockerHub
         run: |
-          docker tag your_image_name ${{ secrets.DOCKER_USERNAME }}/your_image_name:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/your_image_name:latest
+          docker tag flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
       - name: Run Docker Compose
         run: |
